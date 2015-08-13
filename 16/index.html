@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Simple Angular data binding</title>
 	<script type="text/javascript" src="../js/angular.min.js"></script>
-	<script src="text/javascript">
+	<script type="text/javascript">
 		var app = angular.module('app', []);
 		app.controller('mainCtrl', ['$scope', function ($scope) {
 			//set default value
@@ -18,9 +18,9 @@
 				var person = {
 					first : $scope.firstName,
 					last : $scope.lastName,
-					gender : $scope.gender,
+					gender : $scope.gender
 				};
-				console.log(person;
+				console.log(person);
 			}
 		}]);
 		 
