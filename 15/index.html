@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" class="no-js">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,21 @@
 	<title>Data Binding Example</title>
 	<script type="text/javascript" src="../js/angular.min.js"></script>
 	<script type="text/javascript">
-		'use strict';
-		var app = angular.module('app',[]);
+		angular
+			.module('app',[])
+			.controller("indexController",function($scope){
+				$scope.name="";
+				$scope.showMessage = function(name) {
+					alert(name);
+				}
+			});
 	</script>
 </head>
-<body>
-	<input ng-model="example" placeholder="Enter something you like">
+<body ng-controller="indexController">
+	<input ng-model="name" placeholder="Enter something you like">
+	<button ng-click="showMessage(name)">Show Message</button>
 	<div>
-		{{example}}
+		{{name}}
 	</div>
 </body>
 </html>
